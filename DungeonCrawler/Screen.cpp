@@ -11,7 +11,7 @@ Screen::Screen(GameCore* core)
 
 Screen::~Screen()
 {
-	delete test;
+	
 }
 
 void Screen::Update(float deltaTime)
