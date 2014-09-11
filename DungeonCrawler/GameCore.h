@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-#include "Screen.h"
+class Screen;
 class GameCore
 {
 public:
@@ -13,6 +13,12 @@ public:
 	void Draw(sf::RenderWindow* window);
 
 	void ChangeScreen(Screen* screen);
+	
+	static int const resX;
+	static int const resY;
+
+	sf::RenderWindow* currentWindow;
+
 protected:
 	Screen* currentScreen = 0;
 };

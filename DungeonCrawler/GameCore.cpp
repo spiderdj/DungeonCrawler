@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "GameCore.h"
-
+#include "Screen.h"
+const int GameCore::resX = 1920;
+const int GameCore::resY = 1080;
 
 GameCore::GameCore()
 {
@@ -14,10 +16,10 @@ GameCore::~GameCore()
 void GameCore::Run()
 {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "Dungeon Crawler");
-
-	sf::View view(sf::FloatRect(0, 0, 1280, 720));
+	currentWindow = &window;
+	sf::View view(sf::FloatRect(0, 0, resX, resY));
 	window.setView(view);
-
+	currentScreen = new Screen(this);
 	sf::Clock updateClock;
 
 	while (window.isOpen())
